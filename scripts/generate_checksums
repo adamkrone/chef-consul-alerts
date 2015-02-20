@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -e
+
+USAGE=$(cat <<EOF
+Usage:
+  $0 version
+EOF)
+
+version=$1
+[ -z "$version" ] && { echo "$USAGE"; exit 1; }
+
+
+systems=( darwin-amd64 linux-386 linux-amd64 )
+files=()
+
+function get_files {
+  for system in "${systems[@]}"
+  do
+    file=("consul-alerts-${version}-${system}")
+    files+=(${file})
+  done
+}
+
+function print_checksums {
+  echo Generating checksums for v${version}
+
+  for file in "${files[@]}"
+  do
+    binary=https://github.com/AcalephStorage/consul-alerts/releases/download/v${version}/${file}.tar
+    checksum=$(curl -L -s $binary | shasum -a 256 | awk '{print $1}')
+    echo "'${file//.tar.gz}' => '$checksum',"
+  done
+}
+
+get_files
+print_checksums
