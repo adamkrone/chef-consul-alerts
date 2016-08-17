@@ -14,6 +14,7 @@ PIDFILE="/var/run/$NAME.pid"
 LOGFILE="/var/log/$NAME.log"
 
 export GOMAXPROCS=${GOMAXPROCS}
+export PATH=$PATH:/opt/consul/<%= node['consul']['version'] %>/
 
 get_pid() {
     cat "$PIDFILE"
