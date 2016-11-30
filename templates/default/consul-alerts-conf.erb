@@ -4,6 +4,7 @@ start on (local-filesystems and net-device-up IFACE!=lo)
 stop on runlevel [06]
 
 env GOMAXPROCS=${GOMAXPROCS}
+env PATH=$PATH:/opt/consul/<%= node['consul']['version'] %>/
 
 exec <%= @command %> <%= @options %> >> /var/log/consul-alerts.log 2>&1
 
