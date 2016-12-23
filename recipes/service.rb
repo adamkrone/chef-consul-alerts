@@ -20,7 +20,8 @@ options = {
   :'--consul-dc' => node['consul_alerts']['consul_dc'],
   :'--consul-acl-token' => node['consul_alerts']['consul_acl_token'],
   :'--watch-checks' => node['consul_alerts']['watch_checks'],
-  :'--watch-events' => node['consul_alerts']['watch_events']
+  :'--watch-events' => node['consul_alerts']['watch_events'],
+  :'--log-level' => node['consul_alerts']['log_level']
 }.select { |_,v| v }
  .map { |k,v| v == true ? k : "#{k}=#{v}" }
  .join(' ')

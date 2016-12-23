@@ -23,11 +23,11 @@ function get_files {
 }
 
 function print_checksums {
-  echo Generating checksums for v${version}
+  echo Generating checksums for ${version}
 
   for file in "${files[@]}"
   do
-    binary=https://github.com/AcalephStorage/consul-alerts/releases/download/v${version}/${file}.tar
+    binary=https://bintray.com/artifact/download/darkcrux/generic/${file}.tar
     checksum=$(curl -L -s $binary | shasum -a 256 | awk '{print $1}')
     echo "'${file//.tar.gz}' => '$checksum',"
   done

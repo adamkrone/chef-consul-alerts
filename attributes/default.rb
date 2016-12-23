@@ -1,5 +1,5 @@
-default['consul_alerts']['base_url'] = 'https://github.com/AcalephStorage/consul-alerts/releases/download/'
-default['consul_alerts']['version'] = '0.3.2'
+default['consul_alerts']['base_url'] = 'https://bintray.com/artifact/download/darkcrux/generic/'
+default['consul_alerts']['version'] = '0.3.3'
 default['consul_alerts']['install_dir'] = '/usr/local/bin'
 default['consul_alerts']['checksums'] = {
   'consul-alerts-0.3.0-darwin-amd64' => 'a06b1cf7393c8b7673c760bd36c3f030e02cbb4b895e532401915e3222213707',
@@ -11,6 +11,9 @@ default['consul_alerts']['checksums'] = {
   'consul-alerts-0.3.2-darwin-amd64' => 'cf8cd6a88299f1beb3d91617533a511db4e6b532fc747e3ededb5dc33a7cfe61',
   'consul-alerts-0.3.2-linux-386' => 'a916ef85bbb191f5c50ce01d5b67521b00b69457c21f6ecb4d1c5653da533323',
   'consul-alerts-0.3.2-linux-amd64' => '196911897dc4fe6036d13fba1a544ec3975fd2b3e3e27b05b21787bdcf765c33',
+  'consul-alerts-0.3.3-darwin-amd64' => '5f572d103901a8667869b06a14b267c553b04e3b889c9cc1509becbd61cda101',
+  'consul-alerts-0.3.3-linux-386' => '7f71358c5182a16c5ae8759d24e11899fd348ba8cdda6f837cb534ae2266660d',
+  'consul-alerts-0.3.3-linux-amd64' => '93e3f1c14def1f24658bad00cd71831c0af8faa0bbc6e889a0c8568f45caa1a1',
 }
 
 # Daemon Options
@@ -20,3 +23,4 @@ default['consul_alerts']['consul_dc'] = 'dc1'
 default['consul_alerts']['consul_acl_token'] = nil
 default['consul_alerts']['watch_checks'] = true
 default['consul_alerts']['watch_events'] = true
+default['consul_alerts']['log_level'] = 'info'
