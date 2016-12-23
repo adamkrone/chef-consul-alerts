@@ -17,5 +17,6 @@ default['consul_alerts']['checksums'] = {
 default['consul_alerts']['alert_addr'] = 'localhost:9000'
 default['consul_alerts']['consul_addr'] = 'localhost:8500'
 default['consul_alerts']['consul_dc'] = 'dc1'
+default['consul_alerts']['consul_acl_token'] = nil
 default['consul_alerts']['watch_checks'] = true
 default['consul_alerts']['watch_events'] = true

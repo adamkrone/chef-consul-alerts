@@ -18,6 +18,7 @@ options = {
   :'--alert-addr' => node['consul_alerts']['alert_addr'],
   :'--consul-addr' => node['consul_alerts']['consul_addr'],
   :'--consul-dc' => node['consul_alerts']['consul_dc'],
+  :'--consul-acl-token' => node['consul_alerts']['consul_acl_token'],
   :'--watch-checks' => node['consul_alerts']['watch_checks'],
   :'--watch-events' => node['consul_alerts']['watch_events']
 }.select { |_,v| v }
